@@ -1,0 +1,25 @@
+{
+  "name": "edique-next-frontend-yarn",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": "true",
+  "workspaces": [
+    "apps/*",
+    "lib/*"
+  ],
+  "scripts": {
+    "opms": "yarn --cwd apps/opms start",
+    "mdm": "yarn --cwd apps/mdm start",
+    "superapp": "yarn --cwd apps/superapp start",
+    "edxpert": "yarn --cwd apps/edxpert start",
+    "ui": "yarn --cwd lib/ui start",
+    "superappBuild": "yarn --cwd apps/superapp build",
+    "uiBuild": "yarn --cwd lib/ui build",
+    "dev": "npm-run-all --parallel ui opms mdm edxpert superapp",
+    "build": "npm-run-all --parallel uiBuild superappBuild"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
